@@ -12,6 +12,7 @@
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "lucide-react": "^0.563.0",
     "react": "^19.1.2",
     "react-dom": "^19.1.2"
   },

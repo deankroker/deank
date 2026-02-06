@@ -1,11 +1,28 @@
+export { SharedTerminalDO } from "./shared-terminal";
+
 /**
- * Main Worker - serves the React app
- * Static assets are handled by Cloudflare's asset serving
+ * Main Worker - handles API routes and WebSocket upgrades
  */
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    // All requests fall through to static asset serving via wrangler.jsonc config
-    // This handler is here for future API routes if needed
+    const url = new URL(request.url);
+
+    // WebSocket: Connect to shared terminal
+    if (url.pathname === "/ws/shared-terminal") {
+      const upgradeHeader = request.headers.get("Upgrade");
+      if (upgradeHeader !== "websocket") {
+        return new Response("Expected Upgrade: websocket", { status: 426 });
+      }
+
+      // Use a single room for now (could be parameterized later)
+      const roomId = "default";
+      const doId = env.SHARED_TERMINAL.idFromName(roomId);
+      const stub = env.SHARED_TERMINAL.get(doId);
+
+      return stub.fetch(request);
+    }
+
+    // All other requests fall through to static asset serving
     return new Response("Not found", { status: 404 });
   },
 } satisfies ExportedHandler<Env>;
