@@ -24,13 +24,21 @@ function App() {
             <span className="prompt">$</span> whoami
           </p>
           <p>
-            Software engineer. Building things on the internet.
+            Engineer, designer, and product tinkerer.
             <span className="cursor" />
           </p>
         </div>
 
+        <section className="about">
+          <p className="section-header">// what is this</p>
+          <p>
+            A log of things I'd love to see. Product observations, friction points,
+            and ideas from building on the internet.
+          </p>
+        </section>
+
         <section className="links">
-          <p className="links-header">// links</p>
+          <p className="section-header">// links</p>
           <ul className="links-list">
             {LINKS.map((link) => (
               <li key={link.label}>

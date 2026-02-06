@@ -110,6 +110,23 @@ body::before {
   50% { opacity: 0; }
 }
 
+/* Section header */
+.section-header {
+  color: var(--fg-dim);
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+/* About section */
+.about {
+  margin-top: 2rem;
+  color: var(--fg);
+}
+
+.about p:not(.section-header) {
+  max-width: 50ch;
+}
+
 /* Links section */
 .links {
   margin-top: 2rem;
