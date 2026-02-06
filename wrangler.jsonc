@@ -3,10 +3,7 @@
   "name": "deank",
   "main": "worker/index.ts",
   "compatibility_date": "2025-10-08",
-  "routes": [
-    { "pattern": "dean.coffee", "zone_name": "dean.coffee" },
-    { "pattern": "www.dean.coffee", "zone_name": "dean.coffee" }
-  ],
+  "custom_domains": ["dean.coffee", "www.dean.coffee"],
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application"

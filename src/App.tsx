@@ -22,6 +22,7 @@ $ cat friction.log
   - Build failures with no clear error surfacing
   - Unclear if failures are plan-related or config issues
   - Had to fall back to template selection flow
+  + CI pipeline auto-configured - no YAML needed!
 
 [TEMPLATE_DISCOVERY]
   - No way to preview template details without switching tabs
@@ -40,20 +41,20 @@ $ cat friction.log
   - Overview shows sources but not actionable next steps
 
 [DOMAIN_SETUP]
-  - Custom domain connection via Wrangler super intuitive
   - Would benefit from guided setup via skill or MCP server
-  - Infrastructure decisions need more hand-holding
+  - Claude suggested routes not custom domains
+  - Custom domain web UI was hard to map to worker
+
 
 [DURABLE_OBJECTS]
   - Had to experiment with creative use case to understand value prop
   - Wow what an awesome primative! 
   - Think docs could be more interactive and show real-world use cases
 
-[WINS]
-  + CI pipeline auto-configured - no YAML needed!
-  + GitHub flow worked well once template was selected
-  + Selection path was intuitive
-
+[WEB_PORTAL]
+  - Really hard to find my app once deployed
+  - I'd love an app-centric view that connects it all, default to workers view maybe
+  - Would love bindings to show domain name & 
 $ _
 `;
 
