@@ -81,7 +81,7 @@ function App() {
     if (!you) return null;
 
     const youPart = (
-      <>You (<span style={{ color: you.color }}>{you.name}</span>)</>
+      <span style={{ color: you.color }}>You ({you.name.trim()})</span>
     );
 
     if (others.length === 0) {
