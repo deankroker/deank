@@ -21,11 +21,12 @@
   "migrations": [
     {
       "tag": "v1",
-      "new_sqlite_classes": ["SharedTerminalDO"]
+      "new_sqlite_classes": ["WorkflowStatusDO"]
     },
     {
       "tag": "v2",
-      "deleted_classes": ["WorkflowStatusDO"]
+      "deleted_classes": ["WorkflowStatusDO"],
+      "new_sqlite_classes": ["SharedTerminalDO"]
     }
   ]
 }

@@ -70,12 +70,12 @@ function App() {
 
   const others = users.filter((u) => u.name !== you?.name);
 
-  // Focus the input area when shared panel opens
+  // Focus the input area when shared panel opens or connection is established
   useEffect(() => {
-    if (activePanel === "shared" && inputRef.current) {
+    if (activePanel === "shared" && isConnected && inputRef.current) {
       inputRef.current.focus();
     }
-  }, [activePanel]);
+  }, [activePanel, isConnected]);
 
   const formatPresence = () => {
     if (!you) return null;
@@ -114,6 +114,7 @@ function App() {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (!isConnected) return;
     if (e.key === "Backspace") {
       e.preventDefault();
       backspace();
@@ -147,7 +148,7 @@ function App() {
           <p className="section-header">// what is this</p>
           <p>
             A log of things I'd love to see. Product observations, friction points,
-            and ideas from building on the internet.
+            and a shared space using durable objects.
           </p>
         </section>
 
